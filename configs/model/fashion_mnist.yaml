@@ -14,9 +14,9 @@ scheduler:
   patience: 10
 
 net:
-  _target_: src.models.components.simple_conv_net.SimpleDenseNet
-  input_size: 784
-  lin1_size: 64
-  lin2_size: 128
-  lin3_size: 64
-  output_size: 10
+  _target_: src.models.components.simple_conv_net.SimpleConvNet
+  layer1: 32
+  layer2: 64
+  layer3: 128
+  layer4: 512
+  layer5: 10
