@@ -1,0 +1,29 @@
+_target_: src.models.bistm_cnn_crf_module.BiLSTM_CNN_CRFModule
+
+optimizer:
+  _target_: torch.optim.SGD
+  _partial_: true
+  lr: 0.001
+  weight_decay: 0.0
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  factor: 0.1
+  patience: 10
+
+net:
+  _target_: src.models.components.bistm_cnn_crf.BiLSTM_CNN_CRF
+  vocab_size:
+  tag_to_ix,
+  embedding_dim: int,
+  hidden_dim: int,
+  char_lstm_dim: 25,
+  char_to_ix=None,
+  pre_word_embeds=None,
+  char_embedding_dim: int = 25,
+  n_cap=None,
+  cap_embedding_dim=None,
+  use_crf: bool = True,
+  char_mode: str = "CNN",
