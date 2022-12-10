@@ -15,7 +15,7 @@ class DatasetWrapper(Dataset):
 
 
 if __name__ == '__main__':
-    dataset = load_dataset("conllpp", split="train")
+    dataset = load_dataset("conllpp")
     print(dataset)
     print(type(dataset))
     for e in dataset:
